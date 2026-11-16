@@ -3,20 +3,20 @@
 ## Pre-Upload
 
 - [ ] Confirm `Derek.Canine@foresightsolutions.io` is the correct public contact email.
-- [ ] Replace `https://formspree.io/f/XXXXXXXX` with the live Formspree endpoint.
+- [ ] Confirm the deployed form action is `https://formspree.io/f/xeagagkw`.
 - [ ] Confirm the AI Scale Diagnostic form posts successfully to Formspree.
 - [ ] Confirm Formspree forwards submissions to the correct inbox.
 - [ ] Confirm the `_gotcha` honeypot field is present and hidden.
-- [ ] Confirm Formspree redirects successful submissions to `thank-you.html`.
+- [ ] If supported by the Formspree plan, configure and verify the custom redirect to `https://foresightsolutions.io/thank-you.html`.
 - [ ] Confirm the phone row is hidden until a real phone number is available.
 - [ ] Confirm the scheduling row is hidden until a real scheduling URL is available.
 - [ ] Confirm no live analytics or tracking scripts are present.
 - [ ] Confirm no internal style guide or Webflow build guide files are included.
-- [ ] Add a real `favicon.ico` file at the site root if favicon display is required at launch.
+- [ ] Confirm the included `favicon.ico` is served from the site root.
 
 ## GoDaddy Upload
 
-- [ ] Upload the contents of the deployment folder into `public_html`.
+- [ ] Upload the files listed in `README_DEPLOYMENT.md` into `public_html`.
 - [ ] Confirm `index.html` is at the root of `public_html`.
 - [ ] Confirm `styles.css` is at the root of `public_html`.
 - [ ] Confirm `robots.txt` is at the root of `public_html`.

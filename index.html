@@ -31,41 +31,43 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="wrap nav-inner">
-      <a class="brand" href="index.html" aria-label="Foresight Solutions home"><span class="brand-mark" aria-hidden="true"></span><span>Foresight Solutions</span></a>
+      <a class="brand" href="index.html" aria-current="page"><span class="brand-mark" aria-hidden="true"></span><span>Foresight Solutions</span></a>
       <nav class="nav-links" aria-label="Primary navigation">
         <a href="solutions.html">Solutions</a>
         <a href="services.html">Services</a>
         <a href="palantir-foundry.html">Foundry</a>
         <a href="industries.html">Industries</a>
         <a href="how-it-works.html">How It Works</a>
-        <a href="contact.html" class="btn btn-secondary">Request Diagnostic</a>
+        <a href="about.html">About</a>
+        <a class="btn btn-primary" href="contact.html#diagnostic">Request AI Scale Diagnostic</a>
       </nav>
       <details class="mobile-nav">
-        <summary aria-label="Open navigation menu">Menu</summary>
+        <summary>Menu</summary>
         <nav class="mobile-panel" aria-label="Mobile navigation">
           <a href="solutions.html">Solutions</a>
           <a href="services.html">Services</a>
           <a href="palantir-foundry.html">Foundry</a>
           <a href="industries.html">Industries</a>
           <a href="how-it-works.html">How It Works</a>
-          <a href="contact.html">Request Diagnostic</a>
+          <a href="about.html">About</a>
+          <a class="btn btn-primary" href="contact.html#diagnostic">Request AI Scale Diagnostic</a>
         </nav>
       </details>
     </div>
   </header>
 
-  <main id="main">
+  <main id="main" tabindex="-1">
     <section class="hero">
       <div class="wrap hero-grid">
         <div>
           <div class="eyebrow">Enterprise AI scale | Foundry execution | Operating leverage</div>
           <h1>Move AI from promising pilots to the operating core of the enterprise.</h1>
           <p class="lead">Foresight Solutions helps enterprise leaders turn isolated AI wins and Palantir Foundry deployments into durable operating leverage: faster decisions, reusable delivery patterns, reduced dependency on key individuals, operational consistency, and scalable AI adoption.</p>
-          <p class="sublead">The work starts where most AI programs start to drag: after the demo, after the first deployment, and before the enterprise has a repeatable model for making AI part of how work gets decided, coordinated, and executed.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="contact.html">Request AI Scale Diagnostic</a>
+            <a class="btn btn-primary" href="contact.html#diagnostic">Request AI Scale Diagnostic</a>
             <a class="btn btn-secondary" href="services.html">Explore Services</a>
           </div>
+          <p class="sublead">The work starts where most AI programs start to drag: after the demo, after the first deployment, and before the enterprise has a repeatable model for making AI part of how work gets decided, coordinated, and executed.</p>
           <div class="pill-row" aria-label="Core capabilities">
             <span class="pill">Foundry scale</span>
             <span class="pill">AIP readiness</span>
@@ -75,8 +77,8 @@
           </div>
         </div>
 
-        <div class="visual-panel" aria-label="Enterprise AI operating model diagram">
-          <div class="system-map" aria-hidden="true">
+        <div class="visual-panel" role="group" aria-label="Enterprise AI operating model">
+          <div class="system-map">
             <div class="system-node emphasis"><div><strong>Operating leverage</strong><span>AI, data, and workflow tied to measurable decisions</span></div><span class="pulse"></span></div>
             <div class="system-node"><div><strong>Business meaning</strong><span>Shared objects, actions, and operating context</span></div><span class="pulse"></span></div>
             <div class="system-node"><div><strong>Applications</strong><span>Workshop experiences embedded in daily work</span></div><span class="pulse"></span></div>
@@ -138,6 +140,29 @@
       </div>
     </section>
 
+    <section class="section" id="workflow-examples" aria-labelledby="workflow-examples-title">
+      <div class="wrap">
+        <h2 id="workflow-examples-title">Operational Workflow Examples</h2>
+        <div class="grid-3">
+          <a class="card card-link" href="solutions.html#exceptioniq">
+            <p class="workflow-status">Demonstrated workflow</p>
+            <h3>ExceptionIQ</h3>
+            <p>An analyst reviews source evidence and sees what blocks approval. Eligible exceptions can advance to independent approval and staging.</p>
+          </a>
+          <a class="card card-link" href="solutions.html#jit-workforce-readiness">
+            <p class="workflow-status">Prototype using synthetic data</p>
+            <h3>JIT Workforce Readiness</h3>
+            <p>A supervisor compares operator qualifications with station requirements to spot assignment or training gaps.</p>
+          </a>
+          <a class="card card-link" href="solutions.html#marginiq">
+            <p class="workflow-status">Concept</p>
+            <h3>MarginIQ</h3>
+            <p>Investigate what drove a margin change and which exceptions warrant a closer look.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <section class="cta">
       <div class="wrap cta-box">
         <div>
@@ -146,7 +171,7 @@
           <p>If your AI pilots, Foundry deployments, or AIP initiatives have proven value but have not yet changed the operating cadence of the business, the next step is identifying the true constraint.</p>
         </div>
         <div class="actions">
-          <a class="btn btn-primary" href="contact.html">Request AI Scale Diagnostic</a>
+          <a class="btn btn-primary" href="contact.html#diagnostic">Request AI Scale Diagnostic</a>
           <a class="btn btn-secondary" href="services.html">Explore Services</a>
         </div>
       </div>
