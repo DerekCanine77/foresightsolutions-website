@@ -4,10 +4,11 @@ Production static website for Foresight Solutions LLC.
 
 ## Folder Contents
 
-The deployable files are at the repository root. The documented release process is a manual upload to GoDaddy `public_html`. The repository has no deployment workflow.
+The deployable files are at the repository root. The documented release process is a manual upload to GoDaddy `public_html`. The repository has no deployment workflow, and the server does not run a build.
 
 ```text
 repository root/
+├── .htaccess
 ├── 404.html
 ├── about.html
 ├── aip-readiness.html
@@ -17,6 +18,7 @@ repository root/
 ├── how-it-works.html
 ├── index.html
 ├── industries.html
+├── og-image.png
 ├── ontology-workflow.html
 ├── palantir-foundry.html
 ├── privacy.html
@@ -28,7 +30,19 @@ repository root/
 └── styles.css
 ```
 
-Upload only the files listed above. Exclude Git metadata, documentation, and the internal style and Webflow guides. The site uses a local favicon and stylesheet, with no build step or external font, script, or framework dependencies.
+Upload only the files listed above. Do not upload Git metadata, `docs/`, `partials/`, `scripts/`, or the Markdown notes.
+
+`docs/` holds the internal style guide and Webflow build guide. `robots.txt` disallows `/docs/`. Those pages are also marked `noindex`.
+
+Shared header, footer, and social tags are already written into the HTML. If you edit `partials/header.html` or `partials/footer.html`, regenerate locally with:
+
+```text
+python3 scripts/sync-chrome.py
+```
+
+Then commit the HTML. Do not run that script on GoDaddy.
+
+The site uses a local favicon, a local Open Graph image, and a local stylesheet. Pages use the system font stack. No external font, framework, or Foresight-owned analytics script is included.
 
 ## GoDaddy Upload Instructions
 
@@ -36,11 +50,13 @@ Upload only the files listed above. Exclude Git metadata, documentation, and the
 2. Open the hosting product for `foresightsolutions.io`.
 3. Open File Manager.
 4. Navigate to `public_html`.
-5. Upload the production files listed above directly into `public_html`.
+5. Upload the production files listed above directly into `public_html`, including `.htaccess` and `og-image.png`.
 6. Confirm `index.html` is directly inside `public_html`.
-7. Confirm `styles.css`, `robots.txt`, `sitemap.xml`, and `404.html` are also directly inside `public_html`.
+7. Confirm `styles.css`, `robots.txt`, `sitemap.xml`, `404.html`, `.htaccess`, and `og-image.png` are also directly inside `public_html`.
 8. Visit `https://foresightsolutions.io/` after upload.
-9. Test the main navigation, mobile menu, CTA buttons, email link, and AI Scale Diagnostic form.
+9. Test the main navigation, mobile menu, CTA buttons, email link, AI Scale Diagnostic form, a missing URL (custom 404), `http://` and `www` redirects, and response headers.
+
+`.htaccess` sends HTTP and `www` to `https://foresightsolutions.io`, sets the 404 page, and adds security and cache headers. Confirm GoDaddy allows `.htaccess` overrides for this host. If a redirect loops, the HTTPS rule is written to stop when `X-Forwarded-Proto` is already `https`.
 
 ## Contact Configuration
 
@@ -48,54 +64,53 @@ Primary contact email is live and visible on `contact.html`:
 
 - `Derek.Canine@foresightsolutions.io`
 
-Phone number location:
+Phone number:
 
-- File: `contact.html`
-- Section: `Contact Foresight Solutions`
-- Current behavior: phone row is intentionally hidden.
-- When a real phone number is ready, add a visible `.contact-method` row near the existing email row.
+- No phone number is published.
+- Do not add one until a real number is ready.
 
-Scheduling link location:
+Scheduling link:
 
-- File: `contact.html`
-- Section: `Contact Foresight Solutions`
-- Current behavior: scheduling row is intentionally hidden.
-- When a real scheduling URL is ready, add a visible `.contact-method` link near the existing email row.
+- No scheduling URL exists in this repository.
+- `contact.html` has an HTML comment, `TODO(Derek): add a real scheduling URL`, where a link would go.
+- Leave that comment in place until a real URL is available. Do not publish a placeholder link.
 
-Form endpoint location:
+Form endpoint:
 
 - File: `contact.html`
 - Element: AI Scale Diagnostic `<form>`
 - Endpoint: `https://formspree.io/f/xeagagkw`
 - The form uses `method="POST"` and includes a `_gotcha` honeypot spam field.
+- Name, work email, and company are required. Role, primary constraint, and message are optional.
+- A hidden `_next` field points to `https://foresightsolutions.io/thank-you.html`.
 
 Redirect behavior:
 
 - `thank-you.html` exists as the post-submit confirmation page.
-- `thank-you.html` is marked `noindex` and intentionally excluded from `sitemap.xml`.
-- If the Formspree plan supports a custom redirect, configure `https://foresightsolutions.io/thank-you.html` in Formspree Settings.
+- `thank-you.html` is marked `noindex` and is excluded from `sitemap.xml`.
+- Formspree may ignore `_next` until a paid plan or a dashboard setting allows custom redirects. Confirm that before expecting the thank-you page.
+- The same URL can be set in Formspree Settings if the dashboard is the source of truth for the plan.
 - After upload, verify receipt and redirect behavior with one authorized test submission.
 
 ## Tracking And Verification
 
-No live analytics or tracking scripts are included.
+Foresight Solutions does not include its own analytics or advertising tags.
 
-When ready, add verification/tracking through the selected deployment process:
+GoDaddy may still inject its own traffic and performance script on live pages, at `https://img1.wsimg.com/traffic-assets/js/tccl.min.js`. That script is not in this repository. It can send data to `https://csp.secureserver.net`. `privacy.html` discloses this. The account owner can ask GoDaddy to disable the injected script.
 
-- Google Search Console verification
-- Google Analytics 4
-- LinkedIn Insight Tag
+`.htaccess` allows that script and its beacon in the Content Security Policy so the host injection does not break the page. The policy also allows the diagnostic form to post to `https://formspree.io`.
 
-Confirm privacy and consent requirements before adding live tracking.
+If Foresight later adds Google Analytics, Search Console verification, or a LinkedIn Insight Tag, update `privacy.html` first. The current notice says those tags are not on the site.
 
 ## Hosting Notes
 
 - The site is fully static HTML/CSS.
-- No build step is required.
-- No JavaScript is required.
+- No build step is required on the server.
+- No site JavaScript is required.
 - No database is required.
 - No package manager or dependency install is required.
 - The AI Scale Diagnostic form is static-hosting compatible and posts to Formspree.
+- CSS, favicon, and images are cached for 7 days by `.htaccess`.
 
 ## Public Navigation
 
@@ -111,4 +126,4 @@ The public navigation includes:
 
 Privacy is linked in footer navigation only.
 
-Keep `style-guide.html` and `webflow-build-guide.html` out of the upload.
+The footer states that Palantir, Foundry, AIP, and Workshop are trademarks of Palantir Technologies Inc., and that Foresight Solutions is not affiliated with or endorsed by Palantir.
