@@ -4,8 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Request AI Scale Diagnostic | Foresight Solutions</title>
-  <meta name="description" content="Contact Foresight Solutions to discuss where your enterprise AI initiative is slowing and what leadership needs to decide next.">
+  <meta name="description" content="Contact Foresight Solutions to discuss where an operating decision is slowing and what leadership needs to decide next.">
   <link rel="canonical" href="https://foresightsolutions.io/contact.html">
+  <meta property="og:site_name" content="Foresight Solutions">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://foresightsolutions.io/contact.html">
+  <meta property="og:title" content="Request AI Scale Diagnostic | Foresight Solutions">
+  <meta property="og:description" content="Contact Foresight Solutions to discuss where an operating decision is slowing and what leadership needs to decide next.">
+  <meta property="og:image" content="https://foresightsolutions.io/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Foresight Solutions. Technology and execution partner for clearer operating decisions.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Request AI Scale Diagnostic | Foresight Solutions">
+  <meta name="twitter:description" content="Contact Foresight Solutions to discuss where an operating decision is slowing and what leadership needs to decide next.">
+  <meta name="twitter:image" content="https://foresightsolutions.io/og-image.png">
+  <meta name="twitter:image:alt" content="Foresight Solutions. Technology and execution partner for clearer operating decisions.">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -21,6 +35,7 @@
         <a href="industries.html">Industries</a>
         <a href="how-it-works.html">How It Works</a>
         <a href="about.html">About</a>
+        <a href="assessment.html">Assessment</a>
         <a class="btn btn-primary" href="contact.html#diagnostic" aria-current="page">Request AI Scale Diagnostic</a>
       </nav>
       <details class="mobile-nav">
@@ -32,6 +47,7 @@
           <a href="industries.html">Industries</a>
           <a href="how-it-works.html">How It Works</a>
           <a href="about.html">About</a>
+          <a href="assessment.html">Assessment</a>
           <a class="btn btn-primary" href="contact.html#diagnostic" aria-current="page">Request AI Scale Diagnostic</a>
         </nav>
       </details>
@@ -49,9 +65,11 @@
       <div class="wrap contact-grid">
         <div class="contact-card">
           <h2 id="diagnostic" tabindex="-1">Request AI Scale Diagnostic</h2>
-          <p id="intake-help">Share the initiative, the operating constraint, and the decision at hand. Please leave out confidential or sensitive information.</p>
+          <p id="intake-help">Name, work email, and company are enough to start. Role, constraint, and message are optional. Please leave out confidential or sensitive information.</p>
           <form class="intake-form" action="https://formspree.io/f/xeagagkw" method="POST" aria-describedby="intake-help">
+            <!-- TODO(Derek): confirm the Formspree plan or dashboard allows the _next redirect to https://foresightsolutions.io/thank-you.html. Some plans ignore _next until it is enabled. -->
             <input type="hidden" name="_subject" value="AI Scale Diagnostic Request">
+            <input type="hidden" name="_next" value="https://foresightsolutions.io/thank-you.html">
             <div class="hp-field" aria-hidden="true">
               <label for="company_website">Company website</label>
               <input id="company_website" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
@@ -62,20 +80,20 @@
             <input id="email" name="email" type="email" autocomplete="email" required>
             <label for="company">Company</label>
             <input id="company" name="company" type="text" autocomplete="organization" required>
-            <label for="role">Role</label>
+            <label for="role">Role <span class="field-optional">(optional)</span></label>
             <input id="role" name="role" type="text" autocomplete="organization-title">
-            <label for="constraint">Primary constraint</label>
-            <select id="constraint" name="constraint" required>
+            <label for="constraint">Primary constraint <span class="field-optional">(optional)</span></label>
+            <select id="constraint" name="constraint">
               <option value="">Select one</option>
-              <option>AI pilots are not scaling</option>
-              <option>Foundry deployments feel heavier than expected</option>
-              <option>AIP readiness is unclear</option>
-              <option>Business meaning or workflow adoption is constrained</option>
-              <option>Data paths or operational applications need maturity</option>
-              <option>Delivery capacity is stretched</option>
+              <option>Exception backlogs are slowing decisions</option>
+              <option>Margin changes are hard to explain</option>
+              <option>Workforce readiness is hard to see</option>
+              <option>AI pilots are not changing daily decisions</option>
+              <option>Foundry or AIP work needs a clearer operating path</option>
+              <option>Data is not trusted at the moment of decision</option>
             </select>
-            <label for="message">What should Foresight understand?</label>
-            <textarea id="message" name="message" rows="6" placeholder="Briefly describe the initiative, operating constraint, and decision leadership needs to make." required></textarea>
+            <label for="message">What should Foresight understand? <span class="field-optional">(optional)</span></label>
+            <textarea id="message" name="message" rows="5" placeholder="Optional. The initiative, the operating constraint, and the decision leadership needs to make."></textarea>
             <button class="btn btn-primary" type="submit">Request AI Scale Diagnostic</button>
           </form>
           <p>See the <a href="privacy.html">privacy notice</a> for how inquiry information is handled.</p>
@@ -83,6 +101,7 @@
         <div class="contact-card">
           <h2>Contact Foresight Solutions</h2>
           <a class="contact-method" href="mailto:Derek.Canine@foresightsolutions.io"><strong>Derek.Canine@foresightsolutions.io</strong><span>Email</span></a>
+          <!-- TODO(Derek): add a real scheduling URL, then publish a .contact-method link here. No scheduling URL exists in the repo, so none is shown. -->
           <h3>What happens next</h3>
           <p>Foresight reviews your inquiry to determine whether an AI Scale Diagnostic fits the problem you are trying to solve.</p>
         </div>
@@ -92,17 +111,20 @@
   <footer class="site-footer">
     <div class="wrap">
       <div class="footer-grid">
-        <div><strong>Foresight Solutions LLC</strong><br>Enterprise AI, Foundry, and AIP execution partner.</div>
+        <div><strong>Foresight Solutions LLC</strong><br>Independent advisory and execution firm for operating decisions on Palantir Foundry, AIP, and modern data platforms.</div>
         <nav class="footer-links" aria-label="Footer navigation">
           <a href="solutions.html">Solutions</a>
           <a href="services.html">Services</a>
           <a href="about.html">About</a>
+          <a href="assessment.html">Assessment</a>
           <a href="contact.html" aria-current="page">Contact</a>
           <a href="privacy.html">Privacy</a>
         </nav>
       </div>
       <p class="fine-print">Foresight Solutions LLC is an independent consulting firm. No partnership, endorsement, or client relationship is implied unless explicitly stated.</p>
+      <p class="fine-print">Palantir, Foundry, AIP, and Workshop are trademarks of Palantir Technologies Inc. Foresight Solutions is not affiliated with or endorsed by Palantir.</p>
     </div>
   </footer>
+  <script src="site.js" defer></script>
 </body>
 </html>

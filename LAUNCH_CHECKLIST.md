@@ -7,12 +7,14 @@
 - [ ] Confirm the AI Scale Diagnostic form posts successfully to Formspree.
 - [ ] Confirm Formspree forwards submissions to the correct inbox.
 - [ ] Confirm the `_gotcha` honeypot field is present and hidden.
-- [ ] If supported by the Formspree plan, configure and verify the custom redirect to `https://foresightsolutions.io/thank-you.html`.
-- [ ] Confirm the phone row is hidden until a real phone number is available.
-- [ ] Confirm the scheduling row is hidden until a real scheduling URL is available.
-- [ ] Confirm no live analytics or tracking scripts are present.
-- [ ] Confirm no internal style guide or Webflow build guide files are included.
-- [ ] Confirm the included `favicon.ico` is served from the site root.
+- [ ] Confirm the form includes `_next` set to `https://foresightsolutions.io/thank-you.html`.
+- [ ] Confirm the Formspree plan or dashboard actually honors that redirect. Some plans ignore `_next` until it is enabled.
+- [ ] Confirm no phone number is published.
+- [ ] Confirm no scheduling link is published. A real URL is not in the repo. The TODO comment in `contact.html` stays until one exists.
+- [ ] Confirm Foresight has not added its own analytics tags. GoDaddy may still inject `tccl.min.js`. `privacy.html` discloses that. Ask GoDaddy to disable it if it should not run.
+- [ ] Confirm `docs/` (style guide and Webflow build guide) is not uploaded.
+- [ ] Confirm `favicon.ico` and `og-image.png` are served from the site root.
+- [ ] Confirm `.htaccess` is uploaded and that a missing URL returns `404.html`.
 
 ## GoDaddy Upload
 
@@ -21,7 +23,7 @@
 - [ ] Confirm `styles.css` is at the root of `public_html`.
 - [ ] Confirm `robots.txt` is at the root of `public_html`.
 - [ ] Confirm `sitemap.xml` is at the root of `public_html`.
-- [ ] Confirm `404.html` is at the root of `public_html`.
+- [ ] Confirm `404.html`, `.htaccess`, and `og-image.png` are at the root of `public_html`.
 
 ## Page QA
 
@@ -46,8 +48,8 @@
 - [ ] Mobile menu opens and closes.
 - [ ] Mobile navigation links all route correctly.
 - [ ] Footer links route correctly.
-- [ ] Public navigation does not include `style-guide.html`.
-- [ ] Public navigation does not include `webflow-build-guide.html`.
+- [ ] Public navigation does not include `docs/style-guide.html`.
+- [ ] Public navigation does not include `docs/webflow-build-guide.html`.
 - [ ] Privacy appears in footer navigation only.
 
 ## CTA QA
@@ -59,7 +61,7 @@
 - [ ] Topic page CTAs route correctly.
 - [ ] Contact email link opens an email draft.
 - [ ] AI Scale Diagnostic form posts to Formspree.
-- [ ] Successful form submission lands on `thank-you.html`.
+- [ ] Successful form submission lands on `thank-you.html` when the Formspree plan allows `_next`.
 
 ## SEO And Indexing
 
@@ -88,4 +90,4 @@
 - [ ] No dummy phone number remains.
 - [ ] No old `.com` Foresight domain references remain.
 - [ ] Contact path is ready for real inquiries.
-- [ ] No live tracking scripts are present.
+- [ ] No Foresight-owned tracking script is present. If GoDaddy still injects `tccl.min.js`, the privacy page describes it.
