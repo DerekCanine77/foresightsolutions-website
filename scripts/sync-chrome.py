@@ -30,6 +30,7 @@ PAGES = [
     ("industries.html", "industries", ""),
     ("how-it-works.html", "how", ""),
     ("about.html", "about", ""),
+    ("assessment.html", "assessment", ""),
     ("privacy.html", "privacy", ""),
     ("contact.html", "contact", ""),
     ("thank-you.html", "", ""),
@@ -44,6 +45,7 @@ ARIA_KEYS = [
     "industries",
     "how",
     "about",
+    "assessment",
     "contact",
     "privacy",
 ]
@@ -60,6 +62,7 @@ SOCIAL_RE = re.compile(
 )
 HEADER_RE = re.compile(r"<header class=\"site-header\">.*?</header>", re.S)
 FOOTER_RE = re.compile(r"<footer class=\"site-footer\">.*?</footer>", re.S)
+SCRIPT_RE = re.compile(r"\n?[ \t]*<script src=\"(?:/)?site\.js\" defer></script>[ \t]*\n?")
 
 
 def render(template: str, prefix: str, current: str) -> str:
@@ -127,6 +130,11 @@ def stamp(name: str, current: str, prefix: str) -> None:
     html, n_footer = FOOTER_RE.subn(footer, html, count=1)
     if n_header != 1 or n_footer != 1:
         raise SystemExit(f"{name} header/footer replacements: {n_header}/{n_footer}")
+    html = SCRIPT_RE.sub("\n", html)
+    script = f'  <script src="{prefix}site.js" defer></script>\n'
+    if "</body>" not in html:
+        raise SystemExit(f"{name} is missing a body close tag")
+    html = html.replace("</body>", script + "</body>", 1)
     if not html.endswith("\n"):
         html += "\n"
     path.write_text(html)

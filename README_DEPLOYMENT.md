@@ -12,6 +12,7 @@ repository root/
 ├── 404.html
 ├── about.html
 ├── aip-readiness.html
+├── assessment.html
 ├── contact.html
 ├── delivery-pods.html
 ├── favicon.ico
@@ -24,6 +25,7 @@ repository root/
 ├── privacy.html
 ├── robots.txt
 ├── services.html
+├── site.js
 ├── sitemap.xml
 ├── solutions.html
 ├── thank-you.html
@@ -106,7 +108,7 @@ If Foresight later adds Google Analytics, Search Console verification, or a Link
 
 - The site is fully static HTML/CSS.
 - No build step is required on the server.
-- No site JavaScript is required.
+- A small deferred script, `site.js`, adds scroll reveal, the homepage illustration, and the self-assessment. The pages remain readable without it.
 - No database is required.
 - No package manager or dependency install is required.
 - The AI Scale Diagnostic form is static-hosting compatible and posts to Formspree.
