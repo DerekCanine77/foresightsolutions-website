@@ -752,10 +752,19 @@ h3 {
   background: var(--bg-2);
 }
 
-.card .workflow-status {
+.card .workflow-status,
+.model-fit {
   color: var(--accent-2);
   font-size: 14px;
   font-weight: 700;
+}
+
+.model-note {
+  margin-top: 20px;
+}
+
+.model-follow {
+  margin-top: 22px;
 }
 
 .sr-only {
