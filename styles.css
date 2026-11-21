@@ -331,35 +331,6 @@ h3 {
   font-size: 18px;
 }
 
-.founder-facts {
-  display: grid;
-  gap: 16px;
-  align-content: start;
-  margin: 0;
-  padding: 24px;
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  background: var(--panel);
-}
-
-.founder-facts div {
-  display: grid;
-  gap: 2px;
-}
-
-.founder-facts dt {
-  color: var(--accent-2);
-  font-size: 12px;
-  font-weight: 750;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.founder-facts dd {
-  margin: 0;
-  color: var(--soft);
-}
-
 .field-optional {
   color: var(--muted);
   font-weight: 650;
