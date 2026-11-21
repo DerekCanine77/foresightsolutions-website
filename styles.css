@@ -769,8 +769,13 @@ h3 {
   gap: 24px;
 }
 
+.footer-grid > :first-child {
+  max-width: 68ch;
+}
+
 .footer-links {
   display: flex;
+  flex: 0 0 auto;
   flex-wrap: wrap;
   gap: 14px;
 }
