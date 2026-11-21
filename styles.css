@@ -759,8 +759,65 @@ h3 {
   font-weight: 700;
 }
 
+.model-facts {
+  display: grid;
+  gap: 12px;
+  margin: 16px 0 0;
+}
+
+.model-facts div {
+  display: grid;
+  gap: 2px;
+}
+
+.model-facts dt {
+  color: var(--accent-2);
+  font-size: 12px;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.model-facts dd {
+  margin: 0;
+}
+
 .model-note {
   margin-top: 20px;
+}
+
+.compare-wrap {
+  overflow-x: auto;
+}
+
+.compare {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+}
+
+.compare th,
+.compare td {
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.compare thead th {
+  color: var(--accent-2);
+  font-size: 14px;
+  background: var(--panel);
+}
+
+.compare tbody th {
+  color: var(--text);
+  font-weight: 750;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.compare td {
+  color: var(--muted);
 }
 
 .model-follow {
