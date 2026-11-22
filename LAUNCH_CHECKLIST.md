@@ -9,12 +9,12 @@
 - [ ] Confirm the `_gotcha` honeypot field is present and hidden.
 - [ ] Confirm the form includes `_next` set to `https://foresightsolutions.io/thank-you.html`.
 - [ ] Confirm the Formspree plan or dashboard actually honors that redirect. Some plans ignore `_next` until it is enabled.
-- [ ] Confirm no phone number is published.
+- [ ] Confirm `248-703-4466` is the published phone number on `contact.html`.
 - [ ] Confirm no scheduling link is published. A real URL is not in the repo. The TODO comment in `contact.html` stays until one exists.
 - [ ] Confirm Foresight has not added its own analytics tags. GoDaddy may still inject `tccl.min.js`. `privacy.html` discloses that. Ask GoDaddy to disable it if it should not run.
 - [ ] Confirm `docs/` (style guide and Webflow build guide) is not uploaded.
 - [ ] Confirm `favicon.ico` and `og-image.png` are served from the site root.
-- [ ] Confirm `.htaccess` is uploaded and that a missing URL returns `404.html`.
+- [ ] Confirm `.htaccess` is uploaded and that a missing URL returns the custom 404. GoDaddy serves `404.shtml`, which must match `404.html`.
 
 ## GoDaddy Upload
 
@@ -23,7 +23,7 @@
 - [ ] Confirm `styles.css` is at the root of `public_html`.
 - [ ] Confirm `robots.txt` is at the root of `public_html`.
 - [ ] Confirm `sitemap.xml` is at the root of `public_html`.
-- [ ] Confirm `404.html`, `.htaccess`, and `og-image.png` are at the root of `public_html`.
+- [ ] Confirm `404.html`, `404.shtml`, `.htaccess`, and `og-image.png` are at the root of `public_html`.
 
 ## Page QA
 

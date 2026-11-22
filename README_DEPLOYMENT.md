@@ -10,6 +10,7 @@ The deployable files are at the repository root. The documented release process 
 repository root/
 ├── .htaccess
 ├── 404.html
+├── 404.shtml
 ├── about.html
 ├── aip-readiness.html
 ├── assessment.html
@@ -54,11 +55,11 @@ The site uses a local favicon, a local Open Graph image, and a local stylesheet.
 4. Navigate to `public_html`.
 5. Upload the production files listed above directly into `public_html`, including `.htaccess` and `og-image.png`.
 6. Confirm `index.html` is directly inside `public_html`.
-7. Confirm `styles.css`, `robots.txt`, `sitemap.xml`, `404.html`, `.htaccess`, and `og-image.png` are also directly inside `public_html`.
+7. Confirm `styles.css`, `robots.txt`, `sitemap.xml`, `404.html`, `404.shtml`, `.htaccess`, and `og-image.png` are also directly inside `public_html`.
 8. Visit `https://foresightsolutions.io/` after upload.
 9. Test the main navigation, mobile menu, CTA buttons, email link, AI Scale Diagnostic form, a missing URL (custom 404), `http://` and `www` redirects, and response headers.
 
-`.htaccess` sends HTTP and `www` to `https://foresightsolutions.io`, sets the 404 page, and adds security and cache headers. Confirm GoDaddy allows `.htaccess` overrides for this host. If a redirect loops, the HTTPS rule is written to stop when `X-Forwarded-Proto` is already `https`.
+`.htaccess` sends HTTP and `www` to `https://foresightsolutions.io`, sets `ErrorDocument 404 /404.html`, and adds security and cache headers. GoDaddy's server also serves `404.shtml` for missing URLs and that file overrides `ErrorDocument`, so `404.shtml` is an exact copy of `404.html` and must be uploaded with it. Confirm GoDaddy allows `.htaccess` overrides for this host. If a redirect loops, the HTTPS rule is written to stop when `X-Forwarded-Proto` is already `https`.
 
 ## Contact Configuration
 
@@ -68,8 +69,8 @@ Primary contact email is live and visible on `contact.html`:
 
 Phone number:
 
-- No phone number is published.
-- Do not add one until a real number is ready.
+- `248-703-4466` is visible on `contact.html` and links to `tel:+12487034466`.
+- The homepage Organization JSON-LD includes `"telephone": "+1-248-703-4466"`.
 
 Scheduling link:
 
