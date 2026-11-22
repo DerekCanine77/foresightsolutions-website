@@ -12,11 +12,17 @@ repository root/
 ├── 404.html
 ├── 404.shtml
 ├── about.html
+├── apple-touch-icon.png
+├── assets/logo.svg
+├── assets/logo-header.svg
+├── assets/logo-mark.svg
 ├── aip-readiness.html
 ├── assessment.html
 ├── contact.html
 ├── delivery-pods.html
+├── favicon-32.png
 ├── favicon.ico
+├── favicon.svg
 ├── how-it-works.html
 ├── index.html
 ├── industries.html
