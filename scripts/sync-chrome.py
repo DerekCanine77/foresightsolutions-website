@@ -63,6 +63,11 @@ SOCIAL_RE = re.compile(
 HEADER_RE = re.compile(r"<header class=\"site-header\">.*?</header>", re.S)
 FOOTER_RE = re.compile(r"<footer class=\"site-footer\">.*?</footer>", re.S)
 SCRIPT_RE = re.compile(r"\n?[ \t]*<script src=\"(?:/)?site\.js\" defer></script>[ \t]*\n?")
+ICON_RE = re.compile(r"\n?[ \t]*<link rel=\"(?:shortcut icon|icon|apple-touch-icon)\"[^>]*>[ \t]*")
+ICONS = """  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+"""
 
 
 def render(template: str, prefix: str, current: str) -> str:
@@ -123,6 +128,12 @@ def stamp(name: str, current: str, prefix: str) -> None:
     else:
         canonical = f'  <link rel="canonical" href="{url}">\n{block}'
         html = DESC_RE.sub(lambda m: m.group(0) + "\n" + canonical, html, count=1)
+
+    html = ICON_RE.sub("", html)
+    if '<link rel="stylesheet"' in html:
+        html = html.replace('<link rel="stylesheet"', ICONS + '  <link rel="stylesheet"', 1)
+    else:
+        html = html.replace("</head>", ICONS + "</head>", 1)
 
     header = render(HEADER, prefix, current)
     footer = render(FOOTER, prefix, current)

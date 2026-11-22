@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="13.00 38.78 174.00 151.22" role="img" aria-label="Foresight Solutions mark">
+  <defs>
+    <linearGradient id="gL" x1="15.0" y1="188.0" x2="100.0" y2="40.8" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1E5FE0"/>
+      <stop offset="1" stop-color="#2B74F0"/>
+    </linearGradient>
+    <linearGradient id="gR" x1="100.0" y1="40.8" x2="185.0" y2="188.0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3C92F6"/>
+      <stop offset="1" stop-color="#2F80ED"/>
+    </linearGradient>
+    <linearGradient id="gB" x1="15.0" y1="188" x2="185.0" y2="164" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4FA3F7"/>
+      <stop offset="1" stop-color="#6BB8FA"/>
+    </linearGradient>
+  </defs>
+  <polygon points="104.67,48.87 100.00,40.78 15.00,188.00 26.90,188.00 81.29,168.00 79.22,168.00 100.00,132.00 101.14,133.98" fill="url(#gL)"/>
+  <polygon points="98.36,43.61 100.00,40.78 185.00,188.00 171.40,188.00 119.12,168.00 120.78,168.00 100.00,132.00" fill="url(#gR)"/>
+  <polygon points="22.65,174.75 15.00,188.00 185.00,188.00 177.35,174.75 117.46,162.24 120.78,168.00 79.22,168.00 82.54,162.24" fill="url(#gB)"/>
+  <polygon points="100.00,132.00 120.78,168.00 79.22,168.00" fill="#ffffff"/>
+</svg>
